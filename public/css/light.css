@@ -1,0 +1,164 @@
+@charset "utf-8";
+body {
+    background: linear-gradient(to bottom, #f5f5f4 40%, #f5f6f6)
+}
+
+.b-f,
+.b-f-h:hover,
+.editandremove,
+.active-p,
+.lSSlideOuter li,
+select,
+select.form-control {
+    background-color: #fff
+}
+
+.premium {
+    background: #fff
+}
+
+.b-f3,
+.b-f3-h:hover,
+.cl-line {
+    background-color: #f3f3f3
+}
+
+.b-fff3 {
+    background-color: #fff3af
+}
+
+.b-f5,
+.b-f5-h:hover,
+.lihover li a:hover,
+.lihover li a:focus,
+.list-block-cat .nofoto,
+center .ok,
+.product_header_btn span:hover,
+.b-fb,
+.b-fb-h:hover,
+#regionlist li a:hover,
+#regionlist li a.active {
+    background-color: #f5f5f5
+}
+
+.b-e,
+.b-e-h:hover {
+    background-color: #eee
+}
+
+.b-e5,
+.b-e5-h:hover {
+    background-color: #e5e5e5
+}
+
+body,
+.c-20,
+#regionlist li a:hover,
+#regionlist li a.active,
+.offer-title h3 a,
+.specials-offer h4,
+.tree2 .dropdown-menu a {
+    color: #202020
+}
+
+a,
+.a-a,
+.c-cb,
+.c-cbh:hover {
+    color: #624abd
+}
+
+a:hover,
+.a-hov:hover,
+.breadcrumb a:hover,
+.c-cr,
+.c-crh:hover,
+.offer:hover h3 a,
+.specials-offer a:hover h4,
+.product_list-imag:hover .product_list-tit,
+.tree2 .dropdown-menu a:hover,
+li.tree2-title a:hover,
+.active-p>div,
+a.active-p,
+li.active-p>a,
+.nav-user-span.active-p,
+.header-nav-user .dropdown-menu>li>a:hover {
+    color: #6b52ca
+}
+
+.add-tb1,
+.bl-celln,
+.c-5,
+.product_params_list span {
+    color: #555
+}
+
+.c-4,
+#regionlist li a,
+.region_current a {
+    color: #444
+}
+
+.c-a,
+select option:first-child,
+.product_params_list span.glyphicon {
+    color: #aaa
+}
+
+.c-7,
+.select2-container--default .select2-results__group,
+.breadcrumb a,
+.product_list-region a,
+.tree2-sub span,
+.current-list ul .currency {
+    color: #777
+}
+
+::-moz-placeholder {
+    color: #777;
+    opacity: 1
+}
+
+:-ms-input-placeholder {
+    color: #777
+}
+
+::-webkit-input-placeholder {
+    color: #777
+}
+
+.search-form input::-moz-placeholder {
+    color: #333
+}
+
+.search-form input:-ms-input-placeholder {
+    color: #333
+}
+
+.search-form input::-webkit-input-placeholder {
+    color: #333
+}
+
+.c-f {
+    color: #fff
+}
+
+.header-top {
+    border-bottom: 1px solid #f5f5f4
+}
+
+.search-form {
+    background: #f7f7f6
+}
+
+.selectRegion,
+.btn-shop {
+    box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 0.07) inset;
+    -webkit-box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 0.07) inset
+}
+
+.loc-all,
+.loc-it {
+    box-shadow: 0 0 0 3px #fff;
+    -webkit-box-shadow: 0 0 0 3px #fff
+}
