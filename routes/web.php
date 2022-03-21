@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdvertisementController;
+use App\Http\Controllers\CatalogController;
 use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,13 +15,14 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/create', [\App\Http\Controllers\AdvertisementController::class, 'create'])->name('create_advertisement');
 
-Route::name('user.')->group(function (){
+Route::get('/', [HomeController::class, 'index'])->name('main_page');
+
+Route::name('user.')->group(function () {
     Route::view('/private', 'auth.private')->middleware('auth')->name('private');
 
-    Route::get('/login', function (){
-        if(Auth::check()){
+    Route::get('/login', function () {
+        if (Auth::check()) {
             return redirect(route('user.private'));
         }
         return view('auth.login');
@@ -28,22 +30,52 @@ Route::name('user.')->group(function (){
 
     Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('login');
 
-    Route::get('/logout',function (){
+    Route::get('/logout', function () {
         Auth::logout();
         return redirect('/');
     })->name('logout');
 
+    Route::get('/recovery', [\App\Http\Controllers\LoginController::class, 'recovery'])->name('recovery');
+
     Route::get('/registration', function () {
-        if (Auth::check()){
+        if (Auth::check()) {
             return redirect(route('user.private'));
         }
         return view('auth.registration');
     })->name('registration');
 
     Route::post('/registration', [\App\Http\Controllers\RegisterController::class, 'save'])->name('registration');
-
 });
 
-//Route::get('user/recovery', [\App\Http\Controllers\LoginController::class, 'recovery'])->name('recovery');
-Route::get('/', [HomeController::class , 'index'])->name('main_page');
+Route::prefix('/profile')->name('profile.')->group(function (){
+
+    Route::get('/create', function () {
+        if (Auth::check()) {
+            return view('user.create');
+        }
+        return view('auth.registration');
+    })->name('create');
+
+    Route::post('/create', [\App\Http\Controllers\CatalogController::class, 'create'])->name('create');
+
+    Route::get('/user/info', [\App\Http\Controllers\AccountController::class, 'info'])->name('info');
+
+    Route::get('/user/pm', [\App\Http\Controllers\AccountController::class, 'pm'])->name('pm');
+
+    Route::get('/user/published', [\App\Http\Controllers\AccountController::class, 'published'])->name('published');
+});
+
+
+Route::get('/catalog/{category}/{product}',[CatalogController::class, 'product'])->name('product');
+Route::get('/catalog/{category}', [CatalogController::class, 'category'])->name('catalog_category');
+Route::get('/allmess',[CatalogController::class, 'showAllMess'])->name('allmess');
+
+
+//Route::prefix('/adm')->name('admin.')->group(function (){
+//    Route::view('/', 'admin.dashboard');
+//    Route::resources([
+//        '/categories'=> CategoryController::class,
+//        '/products'=> ProductController::class
+//    ]);
+//});
 

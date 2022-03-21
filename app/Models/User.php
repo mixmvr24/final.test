@@ -9,6 +9,10 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * @method static where(string $string, $email)
+ * @method static create(array $validateFields)
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;

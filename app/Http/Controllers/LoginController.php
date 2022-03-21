@@ -24,4 +24,7 @@ class LoginController extends Controller
         ]);
     }
 
+    public function recovery(){
+        return view('auth.recovery');
+    }
 }

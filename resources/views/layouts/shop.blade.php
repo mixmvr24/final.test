@@ -11,9 +11,11 @@
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('/css/style-main.css')}}" rel="stylesheet"/>
     <link href="{{asset('/css/glyphicon.css')}}" rel="stylesheet"/>
+    <link href="{{asset('/css/style-mes.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('/css/jquery-ui.css')}}">
-    <link rel="stylesheet" href="{{asset('jquery.fileupload.css')}}">
-    <link rel="stylesheet" href="{{asset('jquery.fileupload-ui.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/jquery.fileupload.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/jquery.fileupload-ui.css')}}">
+
 </head>
 <body>
 <div id="header" class="header b-f">
@@ -37,10 +39,14 @@
                         </div>
                         <ul class="dropdown-menu text-center br10 droplk">
                             <li><a href="{{route('user.registration')}}" title="">Регистрация</a></li>
-                            <li class="btn-login"><a class="btn btn-primary br20" href="{{route('user.login')}}" title="">Войти</a></li>
+                            <li class="btn-login">
+                                <a class="btn btn-primary br20" href="{{route('user.login')}}"
+                                   title="">Войти
+                                </a>
+                            </li>
                         </ul>
                     </div>
-                    <a class="btn btn-success btn-add br25" href="{{route('create_advertisement')}}">Подать объявление</a>
+                    <a class="btn btn-success btn-add br25" href="#">Подать объявление</a>
                     <span class="mbtn-close visible-xs pos-abs">×</span>
                 </div>
                 <div class="mobile-btn bl-inl al-top pos-abs"></div>
@@ -51,14 +57,22 @@
         <div class="container">
             <div class="bl-tb">
                 <div class="bl-cell al-top hedser">
-                    <form id="top_seach" class="search-form br2 f-l br25 bl-inl al-mid" name="top_seach" method="GET" action="/search/">
-                        <input name="add_region" value="" type="hidden" id="ajax_region_id"/><input type='hidden' name='add_cat' value='0'/>
+                    <form id="top_seach" class="search-form br2 f-l br25 bl-inl al-mid" name="top_seach" method="GET"
+                          action="/search/">
+                        <input name="add_region" value="" type="hidden" id="ajax_region_id"/>
+                        <input type='hidden'
+                               name='add_cat'
+                               value='0'/>
                         <div class="input-group group-search br25">
-                            <span class="input-group-btn"><button class="btn-search btn"></button></span>
-                            <input id="autocomplete-text" class="form-control" type="text" name="text" placeholder="Что вы ищете?" value="">
+                            <span class="input-group-btn">
+                                <button class="btn-search btn"></button>
+                            </span>
+                            <input id="autocomplete-text" class="form-control" type="text" name="text"
+                                   placeholder="Что вы ищете?" value="">
                         </div>
                     </form>
-                    <a href="#selectRegion" data-toggle="modal" class="selectRegion bl-inl al-mid c-20 panel-user-hid pos-rel">
+                    <a href="#selectRegion" data-toggle="modal"
+                       class="selectRegion bl-inl al-mid c-20 panel-user-hid pos-rel">
                         <span>Регионы<span class="loc-all pos-abs br100"></span></span></a>
                 </div>
                 <div class="header-menu bl-cell al-mid text-right">
@@ -69,292 +83,98 @@
                         <div class="dropdown-menu lihover br10">
                             <ul>
                                 <li class="dropdown dropdown-hover dropdown-submenu">
-                                    <a href="https://coredo.elite-board.org/Avtotransport/" class="sp-now">
-                                        <img src='{{asset('/images/cat1.png')}}' alt='Автотранспорт'>Автотранспорт</a>
-                                    <ul class="dropdown-menu hidden-xs">
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Avtotransport/sale/">Продажа авто
-                                                <span class="cat-count b-f c-7">9</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Avtotransport/buy/">Покупка авто
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Avtotransport/autoservis/">Автосервис и услуги
-                                                <span class="cat-count b-f c-7">1</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Avtotransport/autozap/">Автозапчасти и принадлежности
-                                                <span class="cat-count b-f c-7">1</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Avtotransport/Avtosalony/">Автосалоны
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown dropdown-hover dropdown-submenu">
-                                    <a href="https://coredo.elite-board.org/Nedvizhimost/" class="sp-now">
-                                        <img src='{{asset('/images/cat2.png')}}' alt='Недвижимость'>Недвижимость</a>
-                                    <ul class="dropdown-menu hidden-xs">
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Nedvizhimost/garag/">Гаражи и Стоянки
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now"
-                                               href="https://coredo.elite-board.org/Nedvizhimost/datcha/">Дачи, Коттеджи
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Nedvizhimost/lands/">Земельный участок
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Nedvizhimost/apartmen/">Комнаты, Квартиры
-                                                <span class="cat-count b-f c-7">5</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Nedvizhimost/office/">Офисы
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Nedvizhimost/other/">Прочее
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown dropdown-hover dropdown-submenu">
-                                    <a href="https://coredo.elite-board.org/Mebel-interer/" class="sp-now">
-                                        <img src='{{asset('/images/cat5.png')}}' alt='Мебель, интерьер'>Мебель, интерьер</a>
-                                    <ul class="dropdown-menu hidden-xs">
-                                        <li>
-                                            <a class="sp-now"
-                                               href="https://coredo.elite-board.org/Mebel-interer/interer/">Мебель и интерьер
-                                                <span class="cat-count b-f c-7">1</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Mebel-interer/obihod/">Предметы обихода
-                                                <span class="cat-count b-f c-7">0</span></a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now"
-                                               href="https://coredo.elite-board.org/Mebel-interer/remont/">Ремонт и сервис
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Mebel-interer/other/">Другое
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown dropdown-hover dropdown-submenu">
-                                    <a href="https://coredo.elite-board.org/Tovary/" class="sp-now">
-                                        <img src='{{asset('/images/cat14.png')}}' alt='Товары'>Дом и сад</a>
-                                    <ul class="dropdown-menu hidden-xs">
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Tovary/children/">Детские товары
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Tovary/office/">Канцелярские товары
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Tovary/beauty/">Красота и Здоровье
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Tovary/furniture/">Мебель
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Tovary/sport_stock/">Спорт инвентарь
-                                                <span class="cat-count b-f c-7">1</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Tovary/other/">Прочее
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown dropdown-hover dropdown-submenu">
                                     <a href="https://coredo.elite-board.org/Bytovaya-tehnika/" class="sp-now">
                                         <img src='{{asset('/images/cat10.png')}}' alt='Бытовая техника'>Бытовая техника</a>
                                     <ul class="dropdown-menu hidden-xs">
                                         <li>
-                                            <a class="sp-now"
-                                               href="https://coredo.elite-board.org/Bytovaya-tehnika/audio/">Аудио, Видео
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Аудио, Видео</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Bytovaya-tehnika/games/">Игры, игровые приставки
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Игры, игровые приставки</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Bytovaya-tehnika/gps/">GPS-навигаторы
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Пылесосы</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now"
-                                               href="https://coredo.elite-board.org/Bytovaya-tehnika/pilesosi/">Пылесосы
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Стиральные машины</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Bytovaya-tehnika/stiralnie/">Стиральные машины
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Кухонная техника</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now"
-                                               href="https://coredo.elite-board.org/Bytovaya-tehnika/kuhonnaya/">Кухонная техника
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Швейное оборудование</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Bytovaya-tehnika/glagka/">Швейное оборудование
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Климатическая техника</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Bytovaya-tehnika/klimat/">Климатическая техника
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Bytovaya-tehnika/remont/">Ремонт и сервис
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Bytovaya-tehnika/other/">Другое
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Другое</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown dropdown-hover dropdown-submenu">
-                                    <a href="https://coredo.elite-board.org/Uslugi/" class="sp-now">
+                                    <a href="#" class="sp-now">
                                         <img src='{{asset('/images/cat12.png')}}' alt='Услуги'>Услуги</a>
                                     <ul class="dropdown-menu hidden-xs">
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Uslugi/webdesign/">Web дизайн
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Web дизайн</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Uslugi/accounting/">Бухгалтерские
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Бухгалтерские</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Uslugi/medical/">Медицинские
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Медицинские</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Uslugi/nursemaids/">Няни, Сиделки
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Няни, Сиделки</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Uslugi/translation/">Перевод текстов
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Перевод текстов</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Uslugi/printing/">Полиграфия
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Полиграфия</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now"
-                                               href="https://coredo.elite-board.org/Uslugi/advancement_site/">Продвижение сайта
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Продвижение сайта</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Uslugi/advertisment/">Реклама
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Реклама</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Uslugi/other/">Другое
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Другое</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown dropdown-hover dropdown-submenu">
-                                    <a href="https://coredo.elite-board.org/Telefony/" class="sp-now">
+                                    <a href="#" class="sp-now">
                                         <img src='{{asset('/images/cat13.png')}}' alt='Телефоны'>Электроника</a>
                                     <ul class="dropdown-menu hidden-xs">
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Telefony/telephone/">Телефоны
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Телефоны</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Telefony/accessory/">Аксессуары
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Аксессуары</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Telefony/remont/">Ремонт
-                                                и сервис <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Ремонт и сервис</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Telefony/drugoe/">Другое
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Другое</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown dropdown-hover dropdown-submenu">
-                                    <a href="https://coredo.elite-board.org/Stroi-materialy/" class="sp-now">
-                                        <img src='{{asset('/images/cat7.png')}}' alt='Строй материалы'>Стройка и ремонт</a>
+                                    <a href="#" class="sp-now">
+                                        <img src='{{asset('/images/cat7.png')}}' alt='Строй материалы'>Мебель и интерьер</a>
                                     <ul class="dropdown-menu hidden-xs">
                                         <li>
-                                            <a class="sp-now"
-                                               href="https://coredo.elite-board.org/Stroi-materialy/varnish/">Лаки, Краски
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Диваны и кровати</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Stroi-materialy/saw/">Пиломатериалы
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Журнальные столики</a>
                                         </li>
                                         <li>
-                                            <a class="sp-now" href="https://coredo.elite-board.org/Stroi-materialy/other/">Другое
-                                                <span class="cat-count b-f c-7">0</span>
-                                            </a>
+                                            <a class="sp-now" href="#">Ковры</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -420,53 +240,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-copyright">
-                        <div class="footer-social c-7 s13">Мы в соцсетях
-                            <a href="/" data-toggle="tooltip" data-placement="top" title="facebook" class="s-fa"><img
-                                    alt='HayDeTodo' src='{{asset('/images/sfa.png')}}'></a>
-                            <a href="/" data-toggle="tooltip" data-placement="top" title="twitter" class="s-tw"><img
-                                    alt='HayDeTodo' src='{{asset('/images/stw.png')}}'></a>
-                            <a href="/" data-toggle="tooltip" data-placement="top" title="odnoklassniki"
-                               class="s-od"><img alt='HayDeTodo' src='{{asset('/images/sod.png')}}'></a>
-                            <a href="/" data-toggle="tooltip" data-placement="top" title="vkontakte" class="s-vk"><img
-                                    alt='HayDeTodo' src='{{asset('/images/svk.png')}}'></a>
-                        </div>
-            </div>
         </div>
     </div>
 </div>
 <div class="menu-overly-mask mbtn-close"></div>
-<script>
-    var parent_region = 0;
-    var back_region = 0;
-    var current_region = TPL_REGION_ID;
-</script>
-<div class="modal fade" id="selectRegion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content modal-content-region">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title text-center s18" id="exampleModalLabel">Выбор региона</h4>
-                <div class="bl-regionlist br10">
-                    <div class="region_current"><a href="#" id="region_select_current"><span
-                                id="region_select_current_name"></span></a></div>
-                    <div class="RegionFilter pos-rel"><input type="text" id="region-modal-filter" value=""
-                                                             class="form-control" placeholder="Фильтр по названию..."
-                                                             autocomplete="off"><a id="region-modal-clear"
-                                                                                   class="pos-abs bl-bl s16 point c-a  text-center">×</a>
-                    </div>
-                    <ul id="regionlist"></ul>
-                </div>
-                <div id="region_loader_img" style="display:none;">
-                    <div>Пожалуйста, подождите...</div>
-                </div>
-                <div class="region_control"><a href="#" id="region_select_back" class="btn btn-default btn-xs">Назад</a>
-                    <a href="#" id="region_select_all" class="btn btn-default btn-xs pull-right">Все регионы</a></div>
-            </div>
-        </div>
-    </div>
-</div>
 <script src="{{asset('/js/jquery.min.js')}}"></script>
 <script src="{{asset('jquery.cookie.js')}}"></script>
 <script src="{{asset('/js/lightslider.min.js')}}"></script>

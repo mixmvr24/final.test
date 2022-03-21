@@ -6,7 +6,8 @@
                 <h1>Восстановление пароля</h1>
             </div>
             <div class="form-group text-left">
-                <input placeholder="Введите email, указанный при регистрации" name="email" id="sender-email" type="email" class="form-control input-control email" required="">
+                <input placeholder="Введите email, указанный при регистрации" name="email" id="sender-email"
+                       type="email" class="form-control input-control email" required="">
             </div>
             <div class="form-group text-center">
                 <input type="submit" name="submit" value="Отправить" class="btn btn-success btn-block">
