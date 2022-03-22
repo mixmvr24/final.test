@@ -83,7 +83,7 @@
                         <div class="dropdown-menu lihover br10">
                             <ul>
                                 <li class="dropdown dropdown-hover dropdown-submenu">
-                                    <a href="https://coredo.elite-board.org/Bytovaya-tehnika/" class="sp-now">
+                                    <a href="{{route('category_appliances')}}" class="sp-now">
                                         <img src='{{asset('/images/cat10.png')}}' alt='Бытовая техника'>Бытовая техника</a>
                                     <ul class="dropdown-menu hidden-xs">
                                         <li>
@@ -113,7 +113,7 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown dropdown-hover dropdown-submenu">
-                                    <a href="#" class="sp-now">
+                                    <a href="{{route('category_services')}}" class="sp-now">
                                         <img src='{{asset('/images/cat12.png')}}' alt='Услуги'>Услуги</a>
                                     <ul class="dropdown-menu hidden-xs">
                                         <li>
@@ -146,7 +146,7 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown dropdown-hover dropdown-submenu">
-                                    <a href="#" class="sp-now">
+                                    <a href="{{route('category_electronics')}}" class="sp-now">
                                         <img src='{{asset('/images/cat13.png')}}' alt='Телефоны'>Электроника</a>
                                     <ul class="dropdown-menu hidden-xs">
                                         <li>
@@ -164,7 +164,7 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown dropdown-hover dropdown-submenu">
-                                    <a href="#" class="sp-now">
+                                    <a href="{{route('category_decor')}}" class="sp-now">
                                         <img src='{{asset('/images/cat7.png')}}' alt='Строй материалы'>Мебель и интерьер</a>
                                     <ul class="dropdown-menu hidden-xs">
                                         <li>
@@ -190,7 +190,7 @@
                                 продавцу. Не забудьте авторизоваться.
                             </div>
                             <div class="chat-popup-btn text-center">
-                                <a class="btn btn-primary btn-block" href="/users/login/" title="">Войти</a>
+                                <a class="btn btn-primary btn-block" href="{{route('user.login')}}" title="">Войти</a>
                             </div>
                         </div>
                     </div>
@@ -235,8 +235,8 @@
                 <div class="col-xs-6 col-sm-3 col-md-3">
                     <ul class="footer-link resp-line">
                         <li class="footer-tit text-up">Пользователю</li>
-                        <li><a href="/users/login/" title="" class="c-4">Личный кабинет</a></li>
-                        <li><a href="/users/login/" title="" class="c-4">Регистрация</a></li>
+                        <li><a href="{{route('user.login')}}" title="" class="c-4">Личный кабинет</a></li>
+                        <li><a href="{{route('user.registration')}}" title="" class="c-4">Регистрация</a></li>
                     </ul>
                 </div>
             </div>

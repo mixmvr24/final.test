@@ -11,13 +11,13 @@
                         <ul class="row tree4 wrapper-scroll-tree4">
                             @foreach($categories as $category)
                                 <li id="{{$category->id}}" class="categories-item col-xs-6 col-sm-4 col-md-3">
-                                    <a href="https://coredo.elite-board.org/Nedvizhimost/"
-                                       class="c-20 s15 bl-bl b-f pos-rel row">
+                                    <a href="#" class="c-20 s15 bl-bl b-f pos-rel row">
                                 <span class="img-circ pull-left">
-                                    <img src="{{asset('/images/cat2.png')}}" alt="Недвижимость">
+                                    <img src="{{asset('/images/cat2.png')}}" alt="{{$category->description}}">
                                 </span>
                                         <span class="tree-n bl-bl sp-now">{{$category->description}}</span>
-                                        <span class="count-tree c-7 s13 bl-bl sp-now">5 объявлений</span></a>
+                                        <span class="count-tree c-7 s13 bl-bl sp-now">5 объявлений</span>
+                                    </a>
                                 </li>
                             @endforeach
                         </ul>

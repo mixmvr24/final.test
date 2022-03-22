@@ -65,9 +65,11 @@ Route::prefix('/profile')->name('profile.')->group(function (){
     Route::get('/user/published', [\App\Http\Controllers\AccountController::class, 'published'])->name('published');
 });
 
-
 Route::get('/catalog/{category}/{product}',[CatalogController::class, 'product'])->name('product');
-Route::get('/catalog/{category}', [CatalogController::class, 'category'])->name('catalog_category');
+Route::get('/catalog/decor', [CatalogController::class, 'decor'])->name('category_decor');
+Route::get('/catalog/electronics', [CatalogController::class, 'electronics'])->name('category_electronics');
+Route::get('/catalog/services', [CatalogController::class, 'services'])->name('category_services');
+Route::get('/catalog/appliances', [CatalogController::class, 'appliances'])->name('category_appliances');
 Route::get('/allmess',[CatalogController::class, 'showAllMess'])->name('allmess');
 
 
